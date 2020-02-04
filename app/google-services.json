@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "722372918287",
+    "firebase_url": "https://githubjobs-6510c.firebaseio.com",
+    "project_id": "githubjobs-6510c",
+    "storage_bucket": "githubjobs-6510c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722372918287:android:d490c579ff63fb910cb77a",
+        "android_client_info": {
+          "package_name": "com.githubjobs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722372918287-d3jh15hmkq676l24p4eo41m92mto3v7e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9EcovA60JvzUT4UVXgz0kO-RcC80Uut0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "722372918287-d3jh15hmkq676l24p4eo41m92mto3v7e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

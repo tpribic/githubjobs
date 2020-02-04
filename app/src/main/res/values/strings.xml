@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">githubjobs</string>
+    <string name="github_jobs">Github Jobs</string>
+    <string name="find_amazing_jobs">Find amazing jobs!</string>
+    <string name="full_time_jobs">Full time jobs</string>
+    <string name="back">Back</string>
+</resources>
