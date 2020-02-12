@@ -4,4 +4,5 @@
     <string name="find_amazing_jobs">Find amazing jobs!</string>
     <string name="full_time_jobs">Full time jobs</string>
     <string name="back">Back</string>
+    <string name="logout">Logout</string>
 </resources>

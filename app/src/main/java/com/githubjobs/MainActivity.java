@@ -2,10 +2,14 @@ package com.githubjobs;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.githubjobs.network.ApiServiceFactory;
 import com.githubjobs.network.models.Job;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements JobsAdapter.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.recycler_view);
+        TextView logOut = findViewById(R.id.logout);
+        logOut.setOnClickListener(view -> signOut());
         initRecyclerView();
         getJobs();
     }
@@ -69,5 +75,21 @@ public class MainActivity extends AppCompatActivity implements JobsAdapter.OnIte
         Intent intent = new Intent(this, JobDescriptionActivity.class);
         intent.putExtra("id", job.getId());
         startActivity(intent);
+    }
+
+    // https://developers.google.com/identity/sign-in/android/disconnect#sign_out_users
+    private void signOut() {
+        GoogleSignInOptions gsio = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+        GoogleSignInClient mGoogleSignInClient = GoogleSignIn.getClient(this, gsio);
+        mGoogleSignInClient.signOut()
+                .addOnCompleteListener(this, task -> {
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                    finishAffinity();
+                });
     }
 }
